@@ -22,6 +22,15 @@ RUN mkdir -p /var/www/html/database \
     && chown -R www-data:www-data /var/www/html/database \
     && chmod -R 775 /var/www/html/database
 
+# Create database if it doesn't exist and set proper permissions
+RUN DB_PATH="/var/www/html/database.db" && \
+    DB_DIR="$(dirname "$DB_PATH")" && \
+    mkdir -p "$DB_DIR" && \
+    touch "$DB_PATH" && \
+    chown www-data:www-data "$DB_PATH" "$DB_DIR" && \
+    chmod 664 "$DB_PATH" && \
+    chmod 775 "$DB_DIR"
+
 # Expose the default Apache port
 EXPOSE 80
 
