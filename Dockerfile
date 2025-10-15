@@ -1,8 +1,12 @@
 # Use official PHP + Apache image
 FROM php:8.4-apache
 
-# Enable required extensions
-RUN docker-php-ext-install pdo pdo_sqlite
+# Install dependencies for SQLite and PHP extensions
+RUN apt-get update && apt-get install -y \
+    libsqlite3-dev \
+    && docker-php-ext-configure pdo_sqlite --with-pdo-sqlite=/usr \
+    && docker-php-ext-install pdo pdo_sqlite \
+    && rm -rf /var/lib/apt/lists/*
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
@@ -14,9 +18,11 @@ COPY . /var/www/html/
 WORKDIR /var/www/html/
 
 # Give SQLite folder write permission
-RUN chown -R www-data:www-data /var/www/html/database && chmod -R 775 /var/www/html/database
+RUN mkdir -p /var/www/html/database \
+    && chown -R www-data:www-data /var/www/html/database \
+    && chmod -R 775 /var/www/html/database
 
-# Expose Apache default port
+# Expose the default Apache port
 EXPOSE 80
 
 # Start Apache
