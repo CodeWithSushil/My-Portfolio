@@ -4,13 +4,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $message = $_POST['message'];
 
   // Store in SQLite
-  $db = new PDO('sqlite:database/portfolio.sqlite');
+  // ../database/portfolio.sqlite
+  $db = new PDO('sqlite: ../database/portfolio.sqlite');
   $stmt = $db->prepare('INSERT INTO messages (name, message, created_at) VALUES (?, ?, datetime("now"))');
   $stmt->execute([$name, $message]);
 
   // Trigger n8n webhook (optional)
-  $webhook = 'https://n8n.yourdomain.com/webhook/contact';
-  @file_get_contents($webhook . '?name=' . urlencode($name));
+ // $webhook = 'https://n8n.yourdomain.com/webhook/contact';
+//  @file_get_contents($webhook . '?name=' . urlencode($name));
   
   echo "Thank you for contacting me!";
   exit;
