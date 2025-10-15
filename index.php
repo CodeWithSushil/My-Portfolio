@@ -14,9 +14,9 @@ $articles = $db->query('SELECT * FROM articles ORDER BY created_at DESC')->fetch
     <h1>Welcome to My Portfolio</h1>
     <nav>
       <a href="/">Home</a>
-      <a href="/about.php">About</a>
-      <a href="/articles.php">Articles</a>
-      <a href="/contact.php">Contact</a>
+      <a href="./pages/about.php">About</a>
+      <a href="./pages/articles.php">Articles</a>
+      <a href="./pages/contact.php">Contact</a>
     </nav>
   </header>
   <main>
@@ -27,5 +27,8 @@ $articles = $db->query('SELECT * FROM articles ORDER BY created_at DESC')->fetch
       <?php endforeach; ?>
     </ul>
   </main>
+<script>
+console.log("Welcome to my Portfolio!");
+</script>
 </body>
 </html>
