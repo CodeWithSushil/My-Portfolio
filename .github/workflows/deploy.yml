@@ -1,4 +1,6 @@
 name: Deploy Portfolio
+permissions:
+  contents: read
 
 on:
   push:
