@@ -5,7 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Store in SQLite
   // ../database/portfolio.sqlite
-  $db = new PDO('sqlite: ../database/portfolio.sqlite');
+  $dbPath = 'database/portfolio.sqlite';
+  $db = new PDO('sqlite:database.db');
   $stmt = $db->prepare('INSERT INTO messages (name, message, created_at) VALUES (?, ?, datetime("now"))');
   $stmt->execute([$name, $message]);
 

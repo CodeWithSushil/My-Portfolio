@@ -16,7 +16,7 @@ $articles = $db->query('SELECT * FROM articles ORDER BY created_at DESC')->fetch
       <a href="/">Home</a>
       <a href="./pages/about.php">About</a>
       <a href="./pages/articles.php">Articles</a>
-      <a href="./pages/contact.php">Contact</a>
+      <a href="./contact.php">Contact</a>
     </nav>
   </header>
   <main>
