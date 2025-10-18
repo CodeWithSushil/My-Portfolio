@@ -1,0 +1,17 @@
+.bg-img {
+    background: #011b1b url("https://cdn.pixabay.com/photo/2024/05/15/20/57/developer-8764527_1280.jpg") no-repeat center;
+    background-size: cover;
+}
+.bg-img h2,
+p {
+    color: white;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+.bg-img h2{
+    color: #fff!important;
+}
+.bg-img p{
+    color: #fb08d6 !important;
+}
