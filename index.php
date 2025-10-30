@@ -49,7 +49,7 @@
                 <div class="navbar-end">
                     <a class="navbar-item" href="/"> Home </a>
 
-                    <a class="navbar-item" href="./contact.html"> Contact </a>
+                    <a class="navbar-item" href="./contact.php"> Contact </a>
                 </div>
             </div>
         </nav>
