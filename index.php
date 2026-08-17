@@ -4,10 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="My Portfolio" />
+        <meta name="description" content="Sushil Kumar | Portfolio" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="favicon.ico" />
-        <title>My Portfolio</title>
+        <title>Sushil Kumar | Portfolio</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.4/css/bulma.min.css"
@@ -28,7 +28,8 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item is-size-5 has-text-dark" href="/">
-                    My Portfolio
+                    <i class="fa"></i>
+                    Sushil Kumar
                 </a>
 
                 <a
