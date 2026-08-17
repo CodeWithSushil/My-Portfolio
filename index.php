@@ -28,7 +28,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item is-size-5 has-text-dark" href="/">
-                    <i class="fa"></i>
+                    <i class="fa-solid fa-laptop-code"></i>
                     Sushil Kumar
                 </a>
 
