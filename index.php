@@ -51,7 +51,7 @@
   <meta name="twitter:image" content="https://sushilkumar.onrender.com/og/master.png">
   <meta name="twitter:image:src" content="https://sushilkumar.onrender.com/og/master.png">
   <meta name="twitter:image:alt" content="Sushil Kumar, PHP Developer">
-  
+  <link rel="canonical" href="https://sushilkumar.onrender.com/">
   <style type="text/css">
   :root,
   [data-theme="light"] {
@@ -151,102 +151,234 @@
   background-size:cover;
   padding:4rem 1rem;
   }
+  html {
+  scroll-behavior:smooth;
+  }
+  section{
+  width:100%;
+  height:auto;
+  min-height:calc(100vh - 60px);
+  }
+  .navbar{
+  width:100%;
+  position:fixed; 
+  top:0;
+  left:0;
+  }
+  .vcentered{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  }
   </style>
 </head>
 <body class="is-family-primary" >
-  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item is-size-5 has-text-weight-bold is-uppercase has-text-link" href="#">
-        <i class="fa fa-laptop-code"></i>
-        Sushil Kumar    
-      </a>
-      
-    <div class="navbar-mobile-controls" >
-      <label class="theme-switch" aria-label="Toggle dark mode">
-        <input type="checkbox" id="themeToggle">
-        <span class="theme-slider" >
-          <span class="theme-icon">
-          <i class="fa-solid fa-sun" ></i>
-          </span>
-        </span>
-      </label>
-      
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  </div>
+	<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+    	<div class="navbar-brand">
+      		<a class="navbar-item is-size-5 has-text-weight-bold is-uppercase has-text-link" href="#">
+       			<i class="fa fa-laptop-code"></i>
+        		Sushil Kumar    
+      		</a>
+      		<div class="navbar-mobile-controls" >
+      			<label class="theme-switch" aria-label="Toggle dark mode">
+        			<input type="checkbox" id="themeToggle">
+        			<span class="theme-slider">
+          				<span class="theme-icon">
+          					<i class="fa-solid fa-sun" ></i>
+          				</span>
+        			</span>
+      			</label>
+      			
+      			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        			<span aria-hidden="true"></span>
+        			<span aria-hidden="true"></span>
+        			<span aria-hidden="true"></span>
+        			<span aria-hidden="true"></span>
+      			</a>
+    		</div>
+  		</div>
+  		
+  		<div id="navbarBasicExample" class="navbar-menu">
+  			<div class="navbar-end">
+        		<a class="navbar-item is-active has-text-white" href="#home">
+          			<i class="fa fa-home"></i>
+          			Home
+          		</a>
+          		<a class="navbar-item" href="#about" >
+          			<i class="fa fa-user"></i>
+          			About
+          		</a>
+          		<a class="navbar-item" href="#service" >
+          			<i class="fa fa-gear"></i>
+          			Services
+          		</a>
+          		<a class="navbar-item" href="#contact" >
+          			<i class="fa fa-user-plus"></i>
+          			Contact
+          		</a>
+          		<a class="navbar-item" href="#" >
+          			<i class="fa fa-pen"></i>
+          			Blog
+          		</a>
+          	</div>
+        </div>
+    </nav>
     
-    <div id="navbarBasicExample" class="navbar-menu">      
-      <div class="navbar-end">
-        <a class="navbar-item is-active has-text-white" href="#">
-          <i class="fa fa-home"></i>
-          Home
-        </a>        
-        <a class="navbar-item">
-          <i class="fa fa-user"></i>
-          About
-        </a>
-        <a class="navbar-item">
-        <i class="fa fa-gear"></i>
-        Services
-        </a>
-        <a class="navbar-item">
-        <i class="fa fa-user-plus"></i>
-        Contact
-        </a>
-        <a class="navbar-item">
-        <i class="fa fa-pen"></i>
-        Blog
-        </a>
-      </div>
-   </div>       
-  </nav>
-  
-  <section class="banner hero is-link">
-    <div class="container p-3">
-      <h2 class="is-size-5-mobile is-size-3-desktop" >
-      Welcome to my Portfolio website.
-      </h2>
-    </div>
-  </section>
-   
-  <script>
-  const themeToggle = document.getElementById("themeToggle");
-  const html = document.documentElement;
-  
-  const savedTheme = localStorage.getItem("theme");
-  
-  if (savedTheme === "dark") {
-  html.setAttribute("data-theme", "dark");
-  themeToggle.checked = true;
-  } else {
-  html.setAttribute("data-theme", "light");
-  }
-  
-  themeToggle.addEventListener("change", () => {
-  const theme = themeToggle.checked ? "dark" : "light";
-  
-  html.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  });
-  
-  const burger = document.querySelector(".navbar-burger");
-  const menu = document.getElementById(burger.dataset.target);
-  
-  burger.addEventListener("click", () => {
-  const active = burger.classList.toggle("is-active");
-  
-  menu.classList.toggle("is-active");
-  
-  burger.setAttribute(
-  "aria-expanded",
-  active ? "true" : "false"
-  );
-  });
+   <section class="banner hero is-link" id="home">
+   	  <div class="vcentered container p-3">
+   		<h2 class="is-size-2-desktop is-size-3-tablet is-size-4-mobile" >
+   Welcome to my <br><span class="has-text-danger is-uppercase is-size-4">Portfolio</span>.
+   </h2>
+   <p class="my-4 is-size-6-mobile is-size-5-tablet is-size-4-desktop" >I'm Sushil Kumar <span class="has-text-warning">PHP Developer</span>.</p>
+   <a class="button is-primary has-text-light" href="#contact">
+   <i class="fa-solid fa-hand" ></i>
+   <span>Hire me</span>
+   </a>
+   </div>
+   </section>
+    
+    <section class="section" id="about">
+    	<div class="container">
+    		<div class="columns is-centered">
+    			<div class="column">
+    				<h2 class="is-size-2-desktop is-size-3-tablet is-size-5-mobile has-text-primary has-text-centered is-uppercase">
+    					About
+    				</h2>
+    				<div class="card my-4 px-4 py-3" >
+    				<p class="card-body" >
+    				Hello, i'm Sushil Kumar aka <span class="has-text-primary" >Code With Sushil</span>.
+    				</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    
+    <section class="section" id="service">
+    	<div class="container">
+    		<div class="columns is-centered">
+    			<div class="column">
+    				<h2 class="is-size-2-desktop is-size-3-tablet is-size-5-mobile has-text-warning has-text-centered is-uppercase">
+    					Services
+   	 				</h2>
+    				<div class="card mt-3">
+    					<div class="card-content" >
+    						<p class="content" >
+    							<span class="subtitle has-text-info">
+    								<span class="icon" >
+    									<i class="fa-solid fa-code"></i>
+    								</span>
+    								<span>SEO</span>
+    							</span><br>
+    							We provide SEO relate service
+    						</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    
+    <section class="section" id="contact" >
+    	<div class="container">
+      		<div class="columns is-centered">
+        		<div class="column is-10-tablet is-7-desktop is-6-widescreen">
+        			<h2 class="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-link has-text-centered is-uppercase has-text-weight-bold mb-6" >Contact</h2>
+          			<form method="post" action="/">
+          				<div class="field">
+              				<p class="control has-icons-left">
+                				<input class="input" type="text" placeholder="Full name" required="required">
+                				<span class="icon is-small is-left" >
+                					<i class="fa-solid fa-user" ></i>
+                				</span>
+              				</p>
+            			</div>
+            			
+            			<div class="field">
+ 	          				<p class="control has-icons-left">
+ 								<input class="input" type="email" placeholder="Email address" required="required" />
+ 								<span class="icon is-small is-left">
+ 									<i class="fa-solid fa-envelope"></i>
+ 								</span>
+ 							</p>
+ 						</div>
+ 						
+ 						<div class="field">
+ 							<p class="control has-icons-left">
+ 								<input class="input" type="text" placeholder="Subject" required="required" />
+ 								<span class="icon is-small is-left">
+ 									<i class="fa-solid fa-heading"></i>
+ 								</span>
+ 							</p>
+ 						</div>
+ 						
+ 						<div class="field">
+ 							<p class="control">
+ 								<textarea class="textarea" type="email" placeholder="Write your message..." required="required"></textarea>
+ 							</p>
+ 						</div>
+ 						
+ 						<div class="field">
+ 							<p class="control">
+ 								<button type="submit" class="button is-link is-fullwidth">
+ 									<span class="icon">
+ 										 <i class="fa-solid fa-paper-plane"></i>
+ 									</span>
+ 									<span>
+ 										Submit
+ 									</span>
+ 								</button>
+ 							</p>
+ 						</div>
+ 					</form>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</section>
+ 	
+ 	<footer class="footer p-3">
+ 		<div class="content has-text-centered">
+ 			<p>&copy;<span id="year"></span>
+ 			<strong class="has-text-link" >Sushil Kumar</strong>.
+ 			All rights reserved.
+ 			</p>
+ 		</div>
+ 	</footer>
+ 	
+ 	<script>
+ 		const themeToggle = document.getElementById("themeToggle");
+ 		const html = document.documentElement;
+ 		
+ 		const savedTheme = localStorage.getItem("theme");
+ 		
+ 		if (savedTheme === "dark") {
+ 			html.setAttribute("data-theme", "dark");
+ 			themeToggle.checked = true;
+ 		} else {
+ 			html.setAttribute("data-theme", "light");
+ 		}
+ 		
+ 		themeToggle.addEventListener("change", () => {
+ 			const theme = themeToggle.checked ? "dark" : "light";
+ 			
+ 			html.setAttribute("data-theme", theme);
+ 			localStorage.setItem("theme", theme);
+ 		});
+ 		
+ 		const burger = document.querySelector(".navbar-burger");
+ 		const menu = document.getElementById(burger.dataset.target);
+ 		
+ 		burger.addEventListener("click", () => {
+ 			const active = burger.classList.toggle("is-active");
+ 			
+ 			menu.classList.toggle("is-active"); 			
+ 			burger.setAttribute("aria-expanded", active ? "true" : "false");
+ 		});
+ 		
+ 		const date = new Date();
+ 		const year = date.getFullYear();
+ 		document.querySelector("#year").innerHTML = year;
   </script>
 </body>
 </html>
