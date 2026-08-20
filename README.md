@@ -9,7 +9,7 @@ My application using stack:
 - [x] PDO SQLite
 - [x] msmtp
 - [x] Docker
-- Render
+- [x] Render
 
 ---
 
@@ -23,15 +23,23 @@ to:
 
 .env
 
+```bash
+cp .env.example .env
+```
+
 Then configure SMTP credentials.
 
 Run:
 
+```bash
 docker compose up --build
+```
 
 Open:
 
+```bash
 http://localhost:10000
+```
 
 ---
 
@@ -49,7 +57,7 @@ Create a Render Web Service.
 
 Render will detect:
 
-render.yaml
+`render.yaml`
 
 The service uses:
 
@@ -63,7 +71,7 @@ The SQLite database is stored on a Render persistent disk.
 
 Health check:
 
-/health
+`/health`
 
 ---
 
