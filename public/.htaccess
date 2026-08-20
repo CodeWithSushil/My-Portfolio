@@ -1,0 +1,22 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect all requests to index.php if file/folder not found
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Security: Disable access to hidden files and config
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to database directly
+<Files "database.db">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Allow PHP and SQLite
+AddType application/x-httpd-php .php
