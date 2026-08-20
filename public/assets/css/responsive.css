@@ -1,0 +1,66 @@
+@media screen and (max-width: 768px) {
+  .portfolio-section {
+    padding: 4rem 1rem;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - var(--navbar-height));
+    background-position: 65% center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+  }
+
+  .about-image img {
+    height: 320px;
+  }
+}
+
+@media screen and (min-width: 769px){
+  .navbar-menu {
+    background: transparent !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-page {
+    background-attachment: scroll;
+  }
+
+  .error-content {
+    padding: 1.5rem;
+  }
+
+  .error-code {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+  }
+
+  .error-description {
+    font-size: 0.95rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .error-actions .button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .error-code {
+    animation: none;
+  }
+
+  .error-actions .button {
+    transition: none;
+  }
+}
