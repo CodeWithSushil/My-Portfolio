@@ -9,14 +9,11 @@ RUN apk add --no-cache \
     git \
     libzip-dev \
     oniguruma-dev \
-    icu-dev
+    icu-dev \
+    sqlite
 
 # PHP extensions
-RUN docker-php-ext-install \
-    pdo \
-    pdo_sqlite \
-    mbstring \
-    intl
+RUN docker-php-ext-install
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
