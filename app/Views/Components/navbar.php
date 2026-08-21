@@ -44,7 +44,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/"
+                    href="#home"
                 >
                     Home
                 </a>
@@ -52,7 +52,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/about"
+                    href="#about"
                 >
                     About
                 </a>
@@ -60,7 +60,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/skills"
+                    href="#skills"
                 >
                     Skills
                 </a>
@@ -68,7 +68,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/projects"
+                    href="#projects"
                 >
                     Projects
                 </a>
@@ -76,7 +76,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/experience"
+                    href="#experience"
                 >
                     Experience
                 </a>
@@ -84,7 +84,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/services"
+                    href="#services"
                 >
                     Services
                 </a>
@@ -92,7 +92,7 @@
 
                 <a
                     class="navbar-item"
-                    href="/contact"
+                    href="#contact"
                 >
                     Contact
                 </a>
@@ -121,7 +121,7 @@
                 <div class="navbar-item">
 
                     <a
-                        href="/contact"
+                        href="#contact"
                         class="button is-primary"
                     >
 
