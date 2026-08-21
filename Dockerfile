@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libonig-dev \
     libicu-dev \
     sqlite3 \
+    libsqlite3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
