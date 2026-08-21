@@ -1,16 +1,17 @@
-FROM php:8.5-cli-alpine
+FROM php:8.5-cli
 
 WORKDIR /app
 
 # System dependencies
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     unzip \
     git \
     libzip-dev \
-    oniguruma-dev \
-    icu-dev \
-    sqlite
+    libonig-dev \
+    libicu-dev \
+    sqlite3 \
+    && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions
 RUN docker-php-ext-install \
