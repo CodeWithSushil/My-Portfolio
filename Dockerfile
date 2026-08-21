@@ -1,4 +1,4 @@
-FROM php:8.4-cli-alpine
+FROM php:8.5-cli-alpine
 
 WORKDIR /app
 
@@ -13,7 +13,13 @@ RUN apk add --no-cache \
     sqlite
 
 # PHP extensions
-RUN docker-php-ext-install
+RUN docker-php-ext-install \
+    zip \
+    mbstring \
+    intl \
+    pdo \
+    pdo_sqlite \
+    opcache
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
