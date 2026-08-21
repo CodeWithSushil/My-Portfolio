@@ -3,6 +3,7 @@ FROM php:8.5-cli
 # Install dependencies for SQLite and PHP extensions
 RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
+    unzip \
     && docker-php-ext-configure pdo_sqlite --with-pdo-sqlite=/usr \
     && docker-php-ext-install pdo pdo_sqlite \
     && rm -rf /var/lib/apt/lists/*
