@@ -30,7 +30,6 @@ use App\Router\Router;
 |--------------------------------------------------------------------------
 */
 
-/*
 $canonicalDomain = 'sushilkumar.onrender.com';
 
 /*
@@ -39,10 +38,10 @@ $canonicalDomain = 'sushilkumar.onrender.com';
 |--------------------------------------------------------------------------
 */
 
-//$currentHost = strtolower($_SERVER['HTTP_HOST'] ?? '');
+$currentHost = strtolower($_SERVER['HTTP_HOST'] ?? '');
 
 // Remove port from HTTP_HOST if present
-//$currentHost = preg_replace('/:\d+$/', '', $currentHost);
+$currentHost = preg_replace('/:\d+$/', '', $currentHost);
 
 /*
 |--------------------------------------------------------------------------
@@ -54,10 +53,10 @@ $canonicalDomain = 'sushilkumar.onrender.com';
 |
 */
 
-//$isHttps =
-//    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-//    || (($_SERVER['SERVER_PORT'] ?? null) === '443')
-//    || (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+$isHttps =
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (($_SERVER['SERVER_PORT'] ?? null) === '443')
+    || (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +64,7 @@ $canonicalDomain = 'sushilkumar.onrender.com';
 |--------------------------------------------------------------------------
 */
 
-//$requestUri = $_SERVER['REQUEST_URI'] ?? '/';
+$requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -73,15 +72,15 @@ $canonicalDomain = 'sushilkumar.onrender.com';
 |--------------------------------------------------------------------------
 */
 
-//if ($currentHost !== $canonicalDomain || !$isHttps) {
-//    header(
-//        'Location: https://' . $canonicalDomain . $requestUri,
-//        true,
-//        301
-//    );
+if ($currentHost !== $canonicalDomain || !$isHttps) {
+    header(
+        'Location: https://' . $canonicalDomain . $requestUri,
+        true,
+        301
+    );
 
-//    exit;
-//}
+    exit;
+}
 
 /*
 |--------------------------------------------------------------------------
