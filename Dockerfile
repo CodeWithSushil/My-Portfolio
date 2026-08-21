@@ -106,7 +106,7 @@ RUN sed -i \
 RUN cat > /etc/apache2/conf.d/app.conf <<'EOF'
 ServerName localhost
 
-Listen 80
+Listen $PORT
 
 DocumentRoot "/var/www/html/public"
 
@@ -318,7 +318,7 @@ RUN chmod +x /entrypoint.sh
 # ------------------------------------------------------------
 # HTTP
 # ------------------------------------------------------------
-EXPOSE 80
+EXPOSE $PORT
 
 # ------------------------------------------------------------
 # Start PHP-FPM + Apache
