@@ -1,124 +1,86 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Contact | Sushil Kumar" />
-        <meta name="robots" content="index, follow" />
-        <link rel="icon" href="favicon.ico" />
-        <title>Contact | Sushil Kumar</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.4/css/bulma.min.css"
-            integrity="sha512-yh2RE0wZCVZeysGiqTwDTO/dKelCbS9bP2L94UvOFtl/FKXcNAje3Y2oBg/ZMZ3LS1sicYk4dYVGtDex75fvvA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
-    <body>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item is-size-5 has-text-dark" href="/">
-                    <i class="fa"></i>
-                    Sushil Kumar
-                </a>
+<section id="contact" class="portfolio-section">
+  <div class="container">
+    
+    <div class="section-heading">
+      <h2 class="title is-2">
+        Contact Me
+      </h2>
+      <p class="subtitle">
+        Have a project, website issue or idea?
+        Let's discuss it.
+      </p>
+    </div>
 
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                    data-target="navbarBasicExample"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+    <div class="contact-box">
+      <form action="/contact" method="post">
+        <div class="columns is-multiline">
+          <!-- Name -->
+          <div class="column is-6">
+            <div class="field">
+              <label class="label" for="name">
+                Name
+              </label>
+              <div class="control has-icons-left">
+                <input id="name" name="name" class="input" type="text" placeholder="Your name" required />
+                <span class="icon is-small is-left">
+                  <i class="fa-solid fa-user"></i>
+                </span>
+              </div>
             </div>
+          </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end">
-                    <a class="navbar-item" href="/"> Home </a>
-
-                    <a class="navbar-item" href="/contact"> Contact </a>
-                </div>
+          <!-- Email -->
+          <div class="column is-6">
+            <div class="field">
+              <label class="label" for="email">
+                Email
+              </label>
+              <div class="control has-icons-left">
+                <input id="email" name="email" class="input" type="email" placeholder="you@example.com" required />
+                <span class="icon is-small is-left">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+              </div>
             </div>
-        </nav>
+          </div>
         
-        <section class="section">
-            <div class="columns is-centered">
-                <div class="column is-mobile is-6-desktop is-10-tablet">
-                    <h2
-                        class="is-size-4-mobile is-size-3-tablet is-size-2-desktop is-size-1-widescreen has-text-link has-text-centered is-uppercase"
-                    >
-                        Contact
-                    </h2>
-                    <form method="post">
-                        <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="text"
-                                    placeholder="Full name"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="email"
-                                    placeholder="Email address"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Subject</label>
-                            <div class="control">
-                                <input
-                                    class="input"
-                                    type="text"
-                                    placeholder="Subject"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Message</label>
-                            <div class="control">
-                                <textarea
-                                    class="textarea"
-                                    placeholder="Textarea"
-                                    required
-                                ></textarea>
-                            </div>
-                        </div>
-
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-link">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+          <!-- Subject -->
+          <div class="column is-12">
+            <div class="field">
+              <label class="label" for="subject">
+                Subject
+              </label>
+              <div class="control">
+                <input id="subject" name="subject" class="input" type="text" placeholder="How can I help?" required />
+              </div>
             </div>
-        </section>
-        <script src="./assets/main.js"></script>
-    </body>
-</html>
+          </div>
+        
+          <!-- Message -->
+          <div class="column is-12">
+            <div class="field">
+              <label class="label" for="message">
+                Message
+              </label>
+              <div class="control">
+                <textarea id="message" name="message" class="textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="column is-12">
+            <button type="submit" class="button is-primary is-medium">
+              <span class="icon">
+                <i class="fa-solid fa-paper-plane"></i>
+              </span>
+              <span>
+                Send Message
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
