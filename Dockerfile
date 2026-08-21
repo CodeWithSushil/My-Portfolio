@@ -42,7 +42,7 @@ RUN apk add --no-cache \
         icu-libs \
         icu-dev \
         libcurl \
-        libcurl-dev \
+        curl-dev \
         openssl-dev \
         zlib \
         zlib-dev \
