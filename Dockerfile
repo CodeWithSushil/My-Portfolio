@@ -1,20 +1,15 @@
-FROM php:8.5-cli
+FROM php:8.4-cli
 
-WORKDIR /app
-
-# System dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    unzip \
-    git \
+# 1. Install system dependencies required for PHP extensions
+RUN apt-get update && apt-get install -y \
+    libicu-dev \
     libzip-dev \
     libonig-dev \
-    libicu-dev \
-    sqlite3 \
-    libsqlite3-dev \
+    zip \
+    unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# PHP extensions
+# 2. Install the PHP extensions
 RUN docker-php-ext-install \
     zip \
     mbstring \
@@ -22,6 +17,7 @@ RUN docker-php-ext-install \
     pdo \
     pdo_sqlite \
     opcache
+
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
