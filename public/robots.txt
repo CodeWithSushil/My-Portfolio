@@ -1,0 +1,17 @@
+User-agent: *
+# Allow all search engine bots to crawl the site by default
+Allow: /
+
+# Disallow sensitive or private directories (adjust paths to fit your project)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+
+# Block specific framework or backend files if applicable
+Disallow: /vendor/
+Disallow: /storage/logs/
+
+# Point search engines to your XML sitemap (update with your actual domain)
+Sitemap: https://sushilkumar.onrender.com/sitemap.xml
+
