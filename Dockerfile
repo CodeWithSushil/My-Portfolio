@@ -1,23 +1,11 @@
-FROM php:8.3-fpm
+FROM php:8.5-cli
 
-# 1. Install system dependencies required for PHP extensions
+# Install dependencies for SQLite and PHP extensions
 RUN apt-get update && apt-get install -y \
-    libicu-dev \
-    libzip-dev \
-    libonig-dev \
-    zip \
-    unzip \
+    libsqlite3-dev \
+    && docker-php-ext-configure pdo_sqlite --with-pdo-sqlite=/usr \
+    && docker-php-ext-install pdo pdo_sqlite \
     && rm -rf /var/lib/apt/lists/*
-
-# 2. Install the PHP extensions
-RUN docker-php-ext-install \
-    zip \
-    mbstring \
-    intl \
-    pdo \
-    pdo_sqlite \
-    opcache
-
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
