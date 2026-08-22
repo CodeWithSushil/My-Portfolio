@@ -109,8 +109,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/> 
 
 <link rel="stylesheet" crossorigin href="/assets/css/app.css">
-<link rel="stylesheet" crossorigin href="/assets/css/responsive.css">
-
 </head>
 <body>
 <?php require(__DIR__ ."/../Components/navbar.php"); ?>
