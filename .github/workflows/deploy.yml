@@ -1,4 +1,5 @@
-name: Deploy Portfolio
+name: Deploy to Render
+
 permissions:
   contents: read
 
@@ -29,9 +30,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
 
-      # - name: Notify n8n workflow
-      #  if: success()
-      #  run: |
-      #    curl -X POST https://n8n.yourdomain.com/webhook/deploy \
-      #      -H "Content-Type: application/json" \
-       #     -d '{"status": "success", "app": "portfolio"}'
+      - name: Notify n8n workflow
+        if: success()
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}" \
+            -H "Content-Type: application/json" \
+            -d '{"status": "success", "app": "portfolio"}'
+       
+       
+      - name: Trigger Render deployment
+        run: curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
