@@ -24,13 +24,13 @@
 <meta property="og:url" content="https://sushilkumar.onrender.com">
 <meta property="og:description" content="Sushil Kumar | Full Stack PHP/Laravel Developer, Freelancer, open source contributor, content creator ">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://sushilkumar.onrender/assets/images/logo.png">
+<meta property="og:image" content="https://sushilkumar.onrender/assets/images/master.webp">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sushil Kumar | Full Stack PHP Developer">
 <meta name="twitter:site" content="@sushilkumar">
 <meta name="twitter:description" content="Sushil Kumar | Full Stack PHP/Laravel Developer, Freelancer, open source contributor, content creator ">
-<meta name="twitter:image" content="https://sushilkumar.onrender.com/assets/images/logo.png">
+<meta name="twitter:image" content="https://sushilkumar.onrender.com/assets/images/master.webp">
 <meta name="twitter:image:alt" content="Sushil Kumar, PHP Developer, Full Stack">
 
 <!-- Structured Data -->
