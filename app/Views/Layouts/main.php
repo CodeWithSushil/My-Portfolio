@@ -1,66 +1,116 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#FF2D20">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-  <meta name="robots" content="index, follow" />
-  <link rel="icon" type="image/png" sizes="16x16"  href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/android-chrome-512x512.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="description" content="<?= esc($description ?? "Sushil Kumar is full stack PHP and Laravel developer")?>">
-  <title> <?= esc($title ?? 'Sushil Kumar | Full Stack PHP Developer');?></title>
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.4/css/bulma.min.css"/>  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/>
-  
-  
-  <!-- Google fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushil Kumar | Full Stack PHP Developer</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  
-  <!-- Primary Meta Tags -->
+    
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FF2D20">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+
+  <meta name="description" content="Sushil Kumar | Full Stack PHP/Laravel Developer, Freelancer, open source contributor, content creator" />
   <meta name="author" content="Sushil Kumar">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://sushilkumar.onrender.com/">
-  <meta property="og:title" content="Sushil Kumar | Portfolio">
-  <meta property="og:description" content="Sushil Kumar aka Code With Sushil is a PHP Developer.">
-  <meta property="og:image" content="https://sushilkumar.onrender.com/og/master.png">
-  <meta property="og:image:secure_url" content="https://sushilkumar.onrender.com/og/master.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Sushil Kumar, PHP Developer">
-  <meta property="og:site_name" content="Sushil Kumar">
-  <meta property="og:locale" content="en_US">
-  <meta property="profile:first_name" content="Sushil">
-  <meta property="profile:last_name" content="Kumar">
-  
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@CodeSushil">
-  <meta name="twitter:creator" content="@CodeSushil">
-  <meta name="twitter:url" content="https://sushilkumar.onrender.com/">
-  <meta name="twitter:title" content="Sushil Kumar | Portfolio">
-  <meta name="twitter:description" content="Sushil Kumar aka Code With Sushil is a PHP Developer.">
-  <meta name="twitter:image" content="https://sushilkumar.onrender.com/og/master.png">
-  <meta name="twitter:image:src" content="https://sushilkumar.onrender.com/og/master.png">
-  <meta name="twitter:image:alt" content="Sushil Kumar, PHP Developer">
-  <link rel="canonical" href="https://sushilkumar.onrender.com/">
-  <link rel="stylesheet" href="/assets/css/app.css">
-  <link rel="stylesheet" href="/assets/css/app.css">
+
+<meta property="og:title" content="Sushil Kumar | Full Stack PHP Developer">
+<meta property="og:site_name" content="Sushilkumar">
+<meta property="og:url" content="https://sushilkumar.onrender.com">
+<meta property="og:description" content="Sushil Kumar | Full Stack PHP/Laravel Developer, Freelancer, open source contributor, content creator ">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sushilkumar.onrender/assets/images/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sushil Kumar | Full Stack PHP Developer">
+<meta name="twitter:site" content="@sushilkumar">
+<meta name="twitter:description" content="Sushil Kumar | Full Stack PHP/Laravel Developer, Freelancer, open source contributor, content creator ">
+<meta name="twitter:image" content="https://sushilkumar.onrender.com/assets/images/logo.png">
+<meta name="twitter:image:alt" content="Sushil Kumar, PHP Developer, Full Stack">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+   	"@graph": [
+   	{
+    	"@type": "Person",
+        "@id": "https://sushilkumar.onrender.com/#person",
+        "name": "Sushil Kumar",
+        "url": "https://sushilkumar.onrender.com/",
+        "jobTitle": "Full Stack PHP Developer",
+        "description": "Full Stack PHP developer, freelancer, open source contributor, YouTuber and educator.",
+        "knowsAbout": [
+        	"PHP",
+            "JavaScript",
+   			"SQL",
+   			"REST API",
+   			"Laravel",
+   			"Vue.js",
+   			"jQuery",
+  			"Bootstrap",
+   			"Bulma",
+   			"SQLite",
+   			"PostgreSQL",
+   			"MySQL",
+   			"Docker",
+   			"GitHub Actions"
+   		],
+   		"sameAs": [
+   			"https://github.com/CodeWithSushil",
+   			"https://x.com/CodeSushil",
+   			"https://www.youtube.com/@Code-With-Sushil",
+   			"https://pinkary.com/@CodeWithSushil",
+   			"https://mastodon.social/@CodeWithSushil",
+   			"https://bsky.app/profile/codewithsushil.bsky.social",
+   			"https://instagram.com/CodeWithSushil"
+   		]
+   	},
+   	{
+   		"@type": "WebSite",
+   		"@id": "https://sushilkumar.onrender.com/#website",
+   		"url": "https://sushilkumar.onrender.com/",
+   		"name": "Sushil Kumar",
+   		"description": "Portfolio of Sushil Kumar, Full Stack PHP Developer.",
+   		"publisher": {
+   			"@id": "https://sushilkumar.onrender.com/#person"
+   		},
+   		"inLanguage": "en-IN"
+   	},
+   	{
+   		"@type": "WebPage",
+   		"@id": "https://sushilkumar.onrender.com/#webpage",
+   		"url": "https://sushilkumar.onrender.com/",
+   		"name": "Sushil Kumar - Full Stack PHP Developer",
+   		"description": "Portfolio website of Sushil Kumar, a Full Stack PHP developer, freelancer and open source contributor.",
+   		"isPartOf": {
+   			"@id": "https://sushilkumar.onrender.com/#website"
+   		},
+   		"about": {
+   			"@id": "https://sushilkumar.onrender.com/#person"
+   		},
+   		"inLanguage": "en-IN"
+   	}
+	]
+}
+</script>
+
+<link rel="icon" href="/favicon.png" type="image/png" sizes="128x128">
+<link rel="apple-touch-icon" href="/favicon.png">
+ 
+<link rel="canonical" href="https://sushilkumar.onrender.com/">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/> 
+
+<link rel="stylesheet" crossorigin href="/assets/css/app.css">
+<link rel="stylesheet" crossorigin href="/assets/css/responsive.css">
+
 </head>
 <body>
 <?php require(__DIR__ ."/../Components/navbar.php"); ?>
