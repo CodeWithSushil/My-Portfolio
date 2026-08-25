@@ -1,0 +1,52 @@
+name: Deploy to Render
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/portfolio
+
+jobs:
+  build-and-deploy:
+    name: Build, Push & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4.6.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Trigger Render deployment
+        if: success()
+        run: |
+          curl --fail-with-body \
+            --silent \
+            --show-error \
+            --request POST \
+            "${{ secrets.RENDER_DEPLOY_HOOK }}"
