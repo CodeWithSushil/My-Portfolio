@@ -111,29 +111,29 @@
 <link rel="stylesheet" crossorigin href="/assets/css/app.css">
 </head>
 <body>
-<?php require(__DIR__ ."/../Components/navbar.php"); ?>
+<?php require __DIR__.'/../Components/navbar.php'; ?>
 
 <main>
 <?php
-//echo $content;
+// echo $content;
 
-  require(__DIR__ ."/../Components/home.php");
+  require __DIR__.'/../Components/home.php';
 
-  require(__DIR__ ."/../Components/about.php");
+require __DIR__.'/../Components/about.php';
 
-  require(__DIR__ ."/../Components/skills.php");
-  
-  require(__DIR__ ."/../Components/projects.php");
-  
-  require(__DIR__ ."/../Components/experience.php");
-  
-  require(__DIR__ ."/../Components/services.php");
-  
-  require(__DIR__ ."/../Components/contact.php");
+require __DIR__.'/../Components/skills.php';
+
+require __DIR__.'/../Components/projects.php';
+
+require __DIR__.'/../Components/experience.php';
+
+require __DIR__.'/../Components/services.php';
+
+require __DIR__.'/../Components/contact.php';
 ?>
 </main>
 
-<?php require(__DIR__ ."/../Components/footer.php"); ?>
+<?php require __DIR__.'/../Components/footer.php'; ?>
 
 <noscript>Update</noscript>
 <script src="/assets/js/app.js"></script>

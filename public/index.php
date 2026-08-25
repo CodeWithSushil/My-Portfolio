@@ -20,7 +20,7 @@ error_reporting(E_ALL);
 |--------------------------------------------------------------------------
 */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use App\Router\Router;
 
@@ -54,7 +54,7 @@ $currentHost = preg_replace('/:\d+$/', '', $currentHost);
 */
 
 $isHttps =
-    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
     || (($_SERVER['SERVER_PORT'] ?? null) === '443')
     || (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
 
@@ -72,9 +72,9 @@ $requestUri = $_SERVER['REQUEST_URI'] ?? '/';
 |--------------------------------------------------------------------------
 */
 
-if ($currentHost !== $canonicalDomain || !$isHttps) {
+if ($currentHost !== $canonicalDomain || ! $isHttps) {
     header(
-        'Location: https://' . $canonicalDomain . $requestUri,
+        'Location: https://'.$canonicalDomain.$requestUri,
         true,
         301
     );
@@ -90,7 +90,7 @@ if ($currentHost !== $canonicalDomain || !$isHttps) {
 
 try {
 
-    $router = new Router();
+    $router = new Router;
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +98,7 @@ try {
     |--------------------------------------------------------------------------
     */
 
-    require_once __DIR__ . '/../routes/web.php';
+    require_once __DIR__.'/../routes/web.php';
 
     /*
     |--------------------------------------------------------------------------

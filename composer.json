@@ -45,7 +45,7 @@
             "@composer install --prefer-dist --no-interaction --no-progress",
             "@composer dump-autoload --optimize"
         ],
-        "serve": "php -S localhost:8000 -t public/",
+        "serve": "php -S localhost:9000 -t public/",
         "install": "composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader",
         "install:prod": "composer install --prefer-dist --no-dev --no-interaction --no-progress --optimize-autoloader",
         "autoload": "composer dump-autoload --optimize",
@@ -66,7 +66,7 @@
         },
         "optimize-autoloader": true,
         "sort-packages": true,
-        "process-timeout": 300
+        "process-timeout": 0
     },
     "minimum-stability": "dev",
     "prefer-stable": true

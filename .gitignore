@@ -1,7 +1,8 @@
 /vendor/
 /node_modules/
 .env
-!/database.db
+*.db
+*.sqlite
 /database/
 uploads/
-
+.phpunit.cache/

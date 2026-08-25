@@ -1,0 +1,8 @@
+
+
+.github/ export-ignore
+.dockerignore export-ignore
+.env export-ignore
+.gitattributes export-ignore
+tests/ export-ignore
+.phpunit.cache/ export-ignore

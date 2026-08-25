@@ -7,9 +7,9 @@ function view(
     array $data = [],
     string $layout = 'main'
 ): void {
-    $viewPath = __DIR__ . '/../Views/Components/' . $view . '.php';
+    $viewPath = __DIR__.'/../Views/Components/'.$view.'.php';
 
-    if (!is_file($viewPath)) {
+    if (! is_file($viewPath)) {
         throw new RuntimeException(
             "View [{$view}] does not exist."
         );
@@ -38,9 +38,9 @@ function view(
     /*
      * Render layout.
      */
-    $layoutPath = __DIR__ . '/../Views/Layouts/' . $layout . '.php';
+    $layoutPath = __DIR__.'/../Views/Layouts/'.$layout.'.php';
 
-    if (!is_file($layoutPath)) {
+    if (! is_file($layoutPath)) {
         throw new RuntimeException(
             "Layout [{$layout}] does not exist."
         );
@@ -49,7 +49,7 @@ function view(
     require $layoutPath;
 }
 
-if (!function_exists('esc')) {
+if (! function_exists('esc')) {
     /**
      * Escape a value for safe HTML output.
      */

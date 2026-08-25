@@ -9,7 +9,6 @@ use InvalidArgumentException;
 use ReflectionException;
 use ReflectionMethod;
 use RuntimeException;
-use Throwable;
 
 final class Router
 {
@@ -47,7 +46,7 @@ final class Router
     ): static {
         $method = strtoupper(trim($method));
 
-        if (!in_array($method, self::METHODS, true)) {
+        if (! in_array($method, self::METHODS, true)) {
             throw new InvalidArgumentException(
                 "Unsupported HTTP method: {$method}"
             );
@@ -59,7 +58,7 @@ final class Router
             throw new InvalidArgumentException('Route URL cannot be empty.');
         }
 
-        if (!is_callable($action) && !(
+        if (! is_callable($action) && ! (
             is_string($action) &&
             str_contains($action, '@')
         )) {
@@ -70,9 +69,9 @@ final class Router
 
         $this->routes[] = [
             'method' => $method,
-            'url'    => $url,
+            'url' => $url,
             'action' => $action,
-            'name'   => $name,
+            'name' => $name,
         ];
 
         return $this;
@@ -140,18 +139,18 @@ final class Router
     public function dispatch(): mixed
     {
         $method = strtoupper(
-            trim((string)($_SERVER['REQUEST_METHOD'] ?? 'GET'))
+            trim((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET'))
         );
 
-        if (!in_array($method, self::METHODS, true)) {
+        if (! in_array($method, self::METHODS, true)) {
             $this->abort(405, 'Method Not Allowed');
         }
 
-        $uri = (string)($_SERVER['REQUEST_URI'] ?? '/');
+        $uri = (string) ($_SERVER['REQUEST_URI'] ?? '/');
 
         $path = parse_url($uri, PHP_URL_PATH);
 
-        if (!is_string($path)) {
+        if (! is_string($path)) {
             $this->abort(400, 'Bad Request');
         }
 
@@ -167,7 +166,7 @@ final class Router
                 $route['method'] === $method ||
                 ($method === 'HEAD' && $route['method'] === 'GET');
 
-            if (!$routeMethodMatches) {
+            if (! $routeMethodMatches) {
                 continue;
             }
 
@@ -197,7 +196,7 @@ final class Router
              * URL-decode route parameters.
              */
             $parameters = array_map(
-                static fn(string $value): string => rawurldecode($value),
+                static fn (string $value): string => rawurldecode($value),
                 $matches
             );
 
@@ -255,7 +254,8 @@ final class Router
                 $segment,
                 $matches
             ) === 1) {
-                $regex[] = '(?P<' . $matches[1] . '>[^/]+)';
+                $regex[] = '(?P<'.$matches[1].'>[^/]+)';
+
                 continue;
             }
 
@@ -270,7 +270,7 @@ final class Router
             return '#^/$#D';
         }
 
-        return '#^/' . implode('/', $regex) . '/?$#D';
+        return '#^/'.implode('/', $regex).'/?$#D';
     }
 
     /**
@@ -291,7 +291,7 @@ final class Router
             $action = $this->resolveController($action);
         }
 
-        if (!is_callable($action)) {
+        if (! is_callable($action)) {
             throw new RuntimeException(
                 'Route action is not callable.'
             );
@@ -317,8 +317,8 @@ final class Router
         );
 
         if (
-            !is_string($controller) ||
-            !is_string($method) ||
+            ! is_string($controller) ||
+            ! is_string($method) ||
             $controller === '' ||
             $method === ''
         ) {
@@ -333,7 +333,7 @@ final class Router
          * This prevents arbitrary namespace/class strings from being
          * passed through the route definition.
          */
-        if (!preg_match(
+        if (! preg_match(
             '/^[A-Za-z_][A-Za-z0-9_]*$/',
             $controller
         )) {
@@ -345,7 +345,7 @@ final class Router
         /*
          * Restrict method names to valid PHP identifiers.
          */
-        if (!preg_match(
+        if (! preg_match(
             '/^[A-Za-z_][A-Za-z0-9_]*$/',
             $method
         )) {
@@ -354,17 +354,17 @@ final class Router
             );
         }
 
-        $class = 'App\\Controllers\\' . $controller;
+        $class = 'App\\Controllers\\'.$controller;
 
-        if (!class_exists($class)) {
+        if (! class_exists($class)) {
             throw new RuntimeException(
                 "Controller [{$class}] not found."
             );
         }
 
-        $instance = new $class();
+        $instance = new $class;
 
-        if (!method_exists($instance, $method)) {
+        if (! method_exists($instance, $method)) {
             throw new RuntimeException(
                 "Controller method [{$class}@{$method}] not found."
             );
@@ -383,7 +383,7 @@ final class Router
             );
         }
 
-        if (!$reflection->isPublic() || $reflection->isStatic()) {
+        if (! $reflection->isPublic() || $reflection->isStatic()) {
             throw new RuntimeException(
                 "Controller method [{$class}@{$method}] is not accessible."
             );
@@ -428,7 +428,7 @@ final class Router
             $path
         );
 
-        if (!is_string($path)) {
+        if (! is_string($path)) {
             throw new RuntimeException(
                 'Unable to normalize route path.'
             );
@@ -438,7 +438,7 @@ final class Router
          * Always begin with "/".
          */
         if ($path[0] !== '/') {
-            $path = '/' . $path;
+            $path = '/'.$path;
         }
 
         /*
@@ -475,7 +475,7 @@ final class Router
         /*
          * Do not expose internal exception details.
          */
-        if (!headers_sent()) {
+        if (! headers_sent()) {
             header('Content-Type: text/plain; charset=UTF-8');
             header('X-Content-Type-Options: nosniff');
             header('Cache-Control: no-store');
