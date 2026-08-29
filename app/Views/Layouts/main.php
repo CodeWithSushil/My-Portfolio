@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FF2D20">
@@ -102,11 +102,13 @@
 
 <link rel="icon" href="/favicon.png" type="image/png" sizes="128x128">
 <link rel="apple-touch-icon" href="/favicon.png">
- 
+
+<link rel="manifest" href="/site.webmanifest">
+
 <link rel="canonical" href="https://sushilkumar.onrender.com/">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/>
 
 <link rel="stylesheet" crossorigin href="/assets/css/app.css">
 </head>
