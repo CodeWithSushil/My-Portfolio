@@ -1,5 +1,5 @@
 <section id="home" class="hero-section">
-  <div class="container">
+  <div class="container px-4">
     <div class="hero-content">
       <p class="hero-small-title">
         Welcome to my portfolio
