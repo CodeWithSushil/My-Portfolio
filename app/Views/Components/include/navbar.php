@@ -58,7 +58,7 @@
                 </a>
 
 
-                <a
+                <!--<a
                     class="navbar-item"
                     href="/skills"
                 >
@@ -79,7 +79,7 @@
                     href="/experience"
                 >
                     Experience
-                </a>
+                </a>-->
 
 
                 <a
